@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("Bilder/salong.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper {
+    flex: 1;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.logo-text {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #f8f9fa;
+}
+
+
+h1, h2, h6 {
+    color: #ffffff !important;
+}
+
+p {
+    color: #ffffff;
+    font-size: larger;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+}
+
+.footer {
+    color: #ffffff;
+    text-align: center;
+    font-size: x-small;
+    display: contents;
+    text-shadow: 0 0 10px #d900ff, 
+    0 0 10px #ff00d9, 
+    0 0 20px #ff00e6, 
+    0 0 40px #ff004c,
+    0 0 80px #ff0000, 
+    0 0 120px #ff0000;
+    
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: medium;
+    
+
+}
+
+.footer a:hover {
+    color: #3e023f;
+}
+
+
+.container {
+    margin-top: 20px;
+}
+
+.section {
+    padding: 40px 20px;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-weight: bold;
+    
+}
+
+.navbar-nav .nav-link:hover {
+    color: green !important;
+}
+
+.hero h1, .hero p {
+    color: #ffffff;
+    text-shadow: 0 0 10px #d900ff, 
+    0 0 10px #ff00d9, 
+    0 0 20px #ff00e6, 
+    0 0 40px #ff004c,
+    0 0 80px #ff0000, 
+    0 0 120px #ff0000;
+    
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    
+}
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,<svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="white"><path stroke="rgba(255, 255, 255, 1)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/></svg>') !important;
+}
+
+
+ul{
+    color: #ffffff;
+    text-shadow: 0 0 10px #d900ff, 
+    0 0 10px #ff00d9, 
+    0 0 20px #ff00e6, 
+    0 0 40px #ff004c,
+    0 0 80px #ff0000, 
+    0 0 120px #ff0000;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    
+}
+li{
+    color: #ffffff;
+    font-size: larger;
+    text-align: left;
+    list-style: none;
+}
