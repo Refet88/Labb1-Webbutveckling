@@ -2,12 +2,13 @@ let products = [
     { id: 1, name: "Volymgivande Schampo", price: 120, category: "Schampo", imageUrl: "Bilder/volymshampo.WebP", description: "Detta schampo ger volym och fyllighet till ditt hår." },
     { id: 2, name: "Fuktgivande Balsam", price: 130, category: "Balsam", imageUrl: "Bilder/Balsam.WebP", description: "Vårdar och återfuktar ditt hår." },
     { id: 3, name: "Stark Hårgel", price: 150, category: "Stylingprodukter", imageUrl: "Bilder/Hairgel.WebP", description: "Ger stark hållbarhet och form till ditt hår." },
-    { id: 4, name: "Hårspray Extra Stadga", price: 130, category: "Stylingprodukter", imageUrl: "Bilder/h%C3%A5rspray.WebP", description: "Fixerar din frisyr med extra stadga." },
-    { id: 5, name: "Närande Hårinpackning", price: 160, category: "Inpackningar", imageUrl: "Bilder/n%C3%A4rande%20h%C3%A5rinpackning.WebP", description: "Närande hårinpackning som återfuktar och stärker håret." },
-    { id: 6, name: "Anti-Friss Serum", price: 180, category: "Serum", imageUrl: "Bilder/Anti-friss%20serum.WebP", description: "Motverkar frissighet och ger håret glans." },
-    { id: 7, name: "Värmeskyddande Spray", price: 170, category: "Stylingprodukter", imageUrl: "Bilder/V%C3%A4rmeskyddande%20Spray.WebP", description: "Skyddar håret vid värmestyling." },
-    { id: 8, name: "Hårolja Med Argan", price: 190, category: "Håroljor", imageUrl: "Bilder/H%C3%A5rolja.WebP", description: "Närande hårolja med arganolja som ger glans och mjukhet." }
+    { id: 4, name: "Hårspray Extra Stadga", price: 130, category: "Stylingprodukter", imageUrl: "Bilder/Hårspray.WebP", description: "Fixerar din frisyr med extra stadga." },
+    { id: 5, name: "Närande Hårinpackning", price: 160, category: "Inpackningar", imageUrl: "Bilder/närande%20hårinpackning.WebP", description: "Närande hårinpackning som återfuktar och stärker håret." },
+    { id: 6, name: "Anti-Friss Serum", price: 180, category: "Serum", imageUrl: "Bilder/Anti-friss%20Serum.WebP", description: "Motverkar frissighet och ger håret glans." },
+    { id: 7, name: "Värmeskyddande Spray", price: 170, category: "Stylingprodukter", imageUrl: "Bilder/Värmeskyddande%20Spray.WebP", description: "Skyddar håret vid värmestyling." },
+    { id: 8, name: "Hårolja Med Argan", price: 190, category: "Håroljor", imageUrl: "Bilder/Hårolja.WebP", description: "Närande hårolja med arganolja som ger glans och mjukhet." }
 ];
+
 
 
 let productList = document.getElementById("product-list");
