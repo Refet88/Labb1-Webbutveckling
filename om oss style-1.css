@@ -1,0 +1,143 @@
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("Bilder/salong.WebP");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#om-oss-footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: small;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+#om-oss-footer a {
+    color: darkorange;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: medium;
+    display: block;
+    margin-top: 5px;
+}
+
+#om-oss-footer a:hover {
+    color: orangered;
+
+}
+
+#om-oss-footer p {
+    color: burlywood;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.map-container {
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+iframe {
+    align-self: center;
+    height: 300px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 10px 14px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+    min-height: 300px;
+}
+
+iframe:hover {
+    transform: scale(1.05);
+}
+
+.text-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 60%;
+    max-width: 100%;
+    margin: 20px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    color:burlywood;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+    min-height: 100px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.stylistinfo {
+    border: 4px solid black;
+    background-color: black;
+    padding: 10px;
+    border-radius: 40px;
+    margin: 10px;
+    margin-bottom: 20px;
+    flex: calc(33.33% - 20px);
+    min-width: 250px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: block;
+}
+
+.stylistinfo h3 {
+    font-weight: bold;
+    color: green;
+    margin-bottom: 20px;
+}
+
+.stylistinfo h6 {
+    font-weight: bold;
+    font-style: italic;
+    font-size: large;
+    color: chocolate;
+    margin-bottom: 20px;
+}
+
+.stylistinfo p {
+    color: white;
+    
+}
+
+img {
+    padding-bottom: 25px;
+    
+}
+
+
+@media (max-width: 768px) {
+    .text-container {
+        width: 90%;
+        margin: 10px auto;
+        margin-bottom: 50px;
+    }
+
+    .stylistinfo {
+        margin-bottom: 20px;
+    }
+}

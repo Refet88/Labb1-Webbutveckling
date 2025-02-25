@@ -1,125 +1,78 @@
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    background-image: url("Bilder/salong.png");
+    display: flex;
+    flex-direction: column;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    background-image: url("Bilder/salong.WebP");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.wrapper {
     flex: 1;
 }
 
-.navbar {
-    margin-bottom: 20px;
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.logo-text {
-    font-family:'Times New Roman', Times, serif;
-    font-size: 24px;
-    font-weight: bold;
-    color: #f8f9fa;
-}
-
-
-h1, h2, h6 {
-    color: #ffffff !important;
-}
-
-p {
-    color: #ffffff;
-    font-size: larger;
-}
-
-.navbar-brand {
-    color: #ffffff !important;
-}
-
-.footer {
-    color: #ffffff;
+#index-footer {
+    background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
-    font-size: x-small;
-    display: contents;
-    text-shadow: 0 0 10px #d900ff, 
-    0 0 10px #ff00d9, 
-    0 0 20px #ff00e6, 
-    0 0 40px #ff004c,
-    0 0 80px #ff0000, 
-    0 0 120px #ff0000;
-    
+    font-size: small;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
 }
 
-.footer a {
-    color: #ffffff;
+
+#index-footer a {
+    color: darkorange;
     text-decoration: none;
     font-weight: bold;
     font-size: medium;
-    
+    display: block;
+    margin-top: 5px;
+}
+
+#index-footer a:hover {
+    color: orangered;
 
 }
 
-.footer a:hover {
-    color: #3e023f;
-}
-
-
-.container {
-    margin-top: 20px;
-}
-
-.section {
-    padding: 40px 20px;
-}
-
-.navbar-nav .nav-link {
-    color: #ffffff !important;
+#index-footer p {
+    color: burlywood;
     font-weight: bold;
-    
+    margin-top: 10px;
 }
 
-.navbar-nav .nav-link:hover {
-    color: green !important;
-}
+.tonad-textcontainer {
 
-.hero h1, .hero p {
-    color: #ffffff;
-    text-shadow: 0 0 10px #d900ff, 
-    0 0 10px #ff00d9, 
-    0 0 20px #ff00e6, 
-    0 0 40px #ff004c,
-    0 0 80px #ff0000, 
-    0 0 120px #ff0000;
-    
-    font-family:'Courier New', Courier, monospace;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    color: burlywood;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    
+    display: block;
+    width: 80%;
+    max-width: 350px;
+    margin-bottom: 100px;
+    text-align: center;
 }
-.navbar-toggler-icon {
-    background-image: url('data:image/svg+xml;charset=UTF8,<svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" fill="white"><path stroke="rgba(255, 255, 255, 1)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/></svg>') !important;
+
+#navbar-container {
+    min-height: 80px;
 }
 
 
-ul{
-    color: #ffffff;
-    text-shadow: 0 0 10px #d900ff, 
-    0 0 10px #ff00d9, 
-    0 0 20px #ff00e6, 
-    0 0 40px #ff004c,
-    0 0 80px #ff0000, 
-    0 0 120px #ff0000;
-    font-family:'Courier New', Courier, monospace;
-    font-weight: bold;
-    
-}
-li{
-    color: #ffffff;
-    font-size: larger;
-    text-align: left;
-    list-style: none;
-}

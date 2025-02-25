@@ -1,0 +1,194 @@
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+
+html {
+    scroll-padding-top: 20%;
+    
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("Bilder/salong.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.tonadcontainer {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.rubrik {
+    color: burlywood;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px;
+    max-width: 100%;
+    min-height: 50px;
+    transition: opacity 0.3s ease;
+    font-display: swap;
+}
+
+table {
+    margin: 10px auto 40px auto;
+    width: 100%;
+    max-width: 400px;
+}
+
+table th, table td {
+    background-color: black !important;
+    color: #ffffff !important;
+    padding: 10px;
+}
+
+
+#product-list {
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+
+.product {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 5px;
+    max-width: 100%;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-image {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+
+
+.modal-title {
+    color: #333;
+}
+
+.modal-body {
+    color: #555;
+}
+
+.modal-body p {
+    color: #555;
+}
+
+.modal-footer .btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+#tjänster-footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: small;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+
+#tjänster-footer a {
+    color: darkorange;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: medium;
+    display: block;
+    margin-top: 5px;
+}
+
+#tjänster-footer a:hover {
+    color: orangered;
+
+}
+
+#tjänster-footer p {
+    color: burlywood;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4caf50;
+    color: white !important;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+
+#joke {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+#joke p {
+    margin: 10px 0;
+}
+
+
+@media (max-width: 768px) {
+    .tonadcontainer {
+        width: 75%;
+        margin: 10px auto;
+        margin-bottom: 100px;
+    }
+    
+    #joke {
+        margin: 50px;
+    }
+    
+}
