@@ -110,6 +110,8 @@
     </footer>
 
     <script src="Produkter.js" defer></script>
+ 
+
     
     <script defer>
     document.addEventListener("DOMContentLoaded", function() {
@@ -120,7 +122,7 @@
     .then(response => response.text())
     .then(data => {
         navbar.innerHTML = data;
-        updateCartTotal();
+        updateCartIcon();
         
         const navbarHeight = navbar.offsetHeight;
         

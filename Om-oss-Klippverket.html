@@ -86,6 +86,8 @@
                 </p>
                 <p>&copy; 2025 Klippverket. Alla rättigheter förbehållna.</p>
             </footer>
+
+            <script src="Produkter.js" defer></script>
             
             <script defer>
             document.addEventListener("DOMContentLoaded", function() {
@@ -96,6 +98,7 @@
                 .then(response => response.text())
                 .then(data => {
                     document.querySelector('#navbar-container').innerHTML = data;
+                    updateCartIcon();
                 });
                 
                 var mapContainer = document.getElementById('mapContainer');

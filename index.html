@@ -43,6 +43,8 @@
         </p>
         <p>&copy; 2025 Klippverket. Alla rättigheter förbehållna.</p>
     </footer>
+    
+    <script src="Produkter.js" defer></script>
 
     <script defer>
         document.addEventListener("DOMContentLoaded", function() {
@@ -52,12 +54,11 @@
             .then(response => response.text())
             .then(data => {
                 navbar.innerHTML = data;
+                updateCartIcon();
             })
             .catch(error => {
                 console.error('There was a problem with the fetch operation:', error);
             });
-    
-            // Övrig kod...
         });
     </script>
     

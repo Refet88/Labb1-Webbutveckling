@@ -9,105 +9,117 @@ let products = [
     { id: 8, name: "Hårolja Med Argan", price: 190, category: "Håroljor", imageUrl: "Bilder/Hårolja.WebP", description: "Närande hårolja med arganolja som ger glans och mjukhet." }
 ];
 
+document.addEventListener("DOMContentLoaded", function () {
+    let productList = document.getElementById("product-list");
+    if (!productList) return;
 
+    products.forEach(product => {
+        let productElement = document.createElement("div");
+        productElement.classList.add("product");
 
-let productList = document.getElementById("product-list");
+        let productImage = document.createElement("img");
+        productImage.src = product.imageUrl;
+        productImage.alt = product.name;
+        productImage.classList.add("product-image");
+        productImage.width = 250;
+        productImage.height = 250;
 
-products.forEach(product => {
-    let productElement = document.createElement('div');
-    productElement.classList.add("product");
+        let productText = document.createElement("p");
+        productText.textContent = `${product.name} - ${product.price}kr`;
 
-    let productImage = document.createElement('img');
-    productImage.src = product.imageUrl;
-    productImage.alt = product.name;
-    productImage.classList.add("product-image");
-    productImage.style.cursor = "pointer";
-    productImage.width = 250;
-    productImage.height = 250;
-    
+        let addButton = document.createElement("button");
+        addButton.textContent = "Lägg till i kundvagn";
+        addButton.classList.add("btn", "btn-primary", "product-button", "add-button");
+        addButton.addEventListener("click", function () {
+            addToCart(product);
+        });
 
-    productImage.addEventListener('click', function() {
-        document.querySelector('#productModalLabel').textContent = product.name;
-        document.querySelector('.modal-body').innerHTML = `
-            <img src="${product.imageUrl}" alt="${product.name}" class="img-fluid mb-3" style="max-width: 100%;">
-            <p>${product.description}</p>
-            <p><strong>Pris:</strong> ${product.price}kr</p>
-        `;
-
-        let modal = new bootstrap.Modal(document.getElementById('productModal'));
-        modal.show();
+        productElement.appendChild(productImage);
+        productElement.appendChild(productText);
+        productElement.appendChild(addButton);
+        productList.appendChild(productElement);
     });
 
-    let productText = document.createElement('p');
-    productText.textContent = `${product.name} - ${product.price}kr`;
-
-    let addButton = document.createElement('button');
-    addButton.textContent = 'Lägg till i kundvagn';
-    addButton.classList.add("btn", "btn-primary", "product-button", "add-button");
-    addButton.addEventListener('click', function() {
-        addToCart(product);
-    });
-
-    productElement.appendChild(productImage);
-    productElement.appendChild(productText);
-    productElement.appendChild(addButton);
-    productList.appendChild(productElement);
+    updateCartIcon();
 });
 
-let cart = [];
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(product) {
-    cart.push(product);
+    const existingProduct = cart.find(item => item.id === product.id);
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        product.quantity = 1;
+        cart.push(product);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
     updateCartIcon();
     showMessage(`${product.name} har lagts till i kundvagnen!`);
     updateCartTotal();
 }
 
-function updateCartIcon() {
-    let cartIcon = document.getElementById('cart-icon');
-    if (cartIcon) {
-        cartIcon.textContent = `Kundvagn (${cart.length})`;
+function changeQuantity(index, change) {
+    if (!cart[index]) return;
+
+    cart[index].quantity += change;
+    if (cart[index].quantity < 1) {
+        removeFromCart(index);
+    } else {
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartTotal();
+        updateCartIcon();
+        showCart();
     }
 }
 
-function showCart() {
-    let cartList = document.getElementById('cart-list');
-    cartList.innerHTML = '';
-
-    cart.forEach(function(product) {
-        let cartItem = document.createElement('div');
-        cartItem.textContent = `${product.name} - ${product.price}kr`;
-        cartList.appendChild(cartItem);
-    });
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartTotal();
+    updateCartIcon();
+    showCart();
 }
 
-function showMessage(message) {
-    let messageDiv = document.getElementById('message');
-    messageDiv.textContent = message;
-    messageDiv.style.display = 'block';
-
-    setTimeout(function() {
-        messageDiv.style.display = 'none';
-    }, 2000);
+function updateCartIcon() {
+    let cartIcon = document.getElementById("cart-icon");
+    if (cartIcon) {
+        let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartIcon.textContent = `Kundvagn (${totalItems})`;
+    }
+    updateCartTotal();
 }
 
 function updateCartTotal() {
-    let total = cart.reduce((sum, product) => sum + product.price, 0);
-    let cartTotal = document.getElementById('cart-total');
+    let total = cart.reduce((sum, product) => sum + (product.price * product.quantity), 0);
+    let cartTotal = document.getElementById("cart-total");
     if (cartTotal) {
         cartTotal.textContent = `(${total} kr)`;
     }
 }
 
-const url = 'https://v2.jokeapi.dev/joke/Any';
+function showMessage(message) {
+    let messageDiv = document.getElementById("message");
+    if (!messageDiv) return;
 
-fetch(url)
+    messageDiv.textContent = message;
+    messageDiv.style.display = "block";
+
+    setTimeout(() => {
+        messageDiv.style.display = "none";
+    }, 2000);
+}
+
+fetch("https://v2.jokeapi.dev/joke/Any")
     .then(response => response.json())
     .then(data => {
-        const jokeElement = document.getElementById('joke');
+        let jokeElement = document.getElementById("joke");
+        if (!jokeElement) return;
+
         jokeElement.innerHTML = `
             <p>${data.setup ? data.setup : data.joke}</p>
-            ${data.delivery ? `<p>${data.delivery}</p>` : ''}
+            ${data.delivery ? `<p>${data.delivery}</p>` : ""}
         `;
     })
-    .catch(error => console.error('Fel vid hämtning av skämt:', error));
+    .catch(error => console.error("Fel vid hämtning av skämt:", error));
