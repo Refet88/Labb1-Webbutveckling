@@ -34,6 +34,18 @@ document.addEventListener("DOMContentLoaded", function () {
             addToCart(product);
         });
 
+        productImage.addEventListener('click', function() {
+            document.querySelector('#productModalLabel').textContent = product.name;
+            document.querySelector('.modal-body').innerHTML = `
+                <img src="${product.imageUrl}" alt="${product.name}" class="img-fluid mb-3" style="max-width: 100%;">
+                <p>${product.description}</p>
+                <p><strong>Pris:</strong> ${product.price}kr</p>
+            `;
+
+            let modal = new bootstrap.Modal(document.getElementById('productModal'));
+            modal.show();
+        });
+
         productElement.appendChild(productImage);
         productElement.appendChild(productText);
         productElement.appendChild(addButton);
